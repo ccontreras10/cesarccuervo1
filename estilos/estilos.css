@@ -41,6 +41,10 @@ body{
     width: 60px;
     height: 60px;
     grid-column: 1/3;
+    /*animacion*/
+    animation-name: cambiarcolor;
+    animation-duration: 3s;
+    animation-iteration-count: 2;
 }
 .contenedor .navbar{
   background-color: #edcb54;
@@ -70,9 +74,16 @@ body{
     padding: 20px;
     margin-top: 5px;
     color: black; 
+    /**trasic**/
+    transition: all 0.5s ease;
 }
 .contenedor .article h1,.contenedor .article p{
     padding: 10px;
+}
+.contenedor .article:hover{
+    cursor: pointer;
+    color: black;
+    background-color: white;
 }
 .contenedor .sidebar img{
     width: 100%;
@@ -86,7 +97,12 @@ body{
     justify-content:center ;
     align-items: center;
     flex-direction: column;
-
+    transition: all 0.5s ease;
+}
+.contenedor .sidebar:hover{
+    cursor: pointer;
+    color: black;
+    background: white;
 }
 .contenedor .related-post{
     background: #edcb54;
@@ -95,14 +111,39 @@ body{
     display: flex;
     align-items: center;
     justify-content: center; 
-  
+  /*animacion**/
+  transition: all 0.5s ease;
 
 }
-
+.contenedor .related-post:hover{
+    cursor:pointer;
+    color:black ;
+    background: white;
+}
 .contenedor .siguenos{
     margin-right: 15px;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
+/***galeria***/
+.contenedor .imagen{
+    width: 80px;
+}
+.contenedor .imagen img{
+    max-width: 100%;
+    
+}
+
+.contenedor .galeria{   
+    grid-column: span 5;    
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(14,1fr);
+    column-gap: .5rem;
+    row-gap: .5rem;
+}
+
 @media screen and (max-width: 768px) {
      header{
          text-align: center;
@@ -117,4 +158,32 @@ body{
          grid-column: 1/-1;
      } 
      
+}
+
+@keyframes cambiarcolor{
+    0%{
+        transform: scale(1);
+        background: white;
+    }
+    20%{
+        transform: scale(1.3);
+    }
+    40%{
+        transform: scale(1.6);
+    }
+    60%{
+        transform: scale(1.9);
+    }
+    70%{
+        transform: scale(1);
+    }
+    80%{
+        transform: scale(.5);
+    }
+    90%{
+        transform: scale(.2);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
