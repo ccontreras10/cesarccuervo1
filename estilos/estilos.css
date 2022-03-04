@@ -135,8 +135,8 @@ body{
     
 }
 
-.contenedor .galeria{   
-    grid-column: span 5;    
+.contenedor .carousel slide{   
+    grid-column: 5/5;    
     margin: auto;
     display: grid;
     grid-template-columns: repeat(14,1fr);
